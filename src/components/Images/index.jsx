@@ -3,7 +3,14 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 const Image = props => {
-  const { foto01, foto02, foto03 } = useStaticQuery(graphql`
+  const {
+    foto01,
+    foto02,
+    foto03,
+    mission,
+    vission,
+    value,
+  } = useStaticQuery(graphql`
     query {
       foto01: file(relativePath: { eq: "foto-01.png" }) {
         childImageSharp {
@@ -26,6 +33,27 @@ const Image = props => {
           }
         }
       }
+      mission: file(relativePath: { eq: "mission.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1200, maxHeight: 600) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+      vission: file(relativePath: { eq: "vission.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1200, maxHeight: 600) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+      value: file(relativePath: { eq: "value.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1200, maxHeight: 600) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
     }
   `)
 
@@ -39,6 +67,12 @@ const Image = props => {
             return <Img fluid={foto02.childImageSharp.fluid} alt="foto02" />
           case "foto03":
             return <Img fluid={foto03.childImageSharp.fluid} alt="foto03" />
+          case "mission":
+            return <Img fluid={mission.childImageSharp.fluid} alt="mission" />
+          case "vission":
+            return <Img fluid={vission.childImageSharp.fluid} alt="vission" />
+          case "value":
+            return <Img fluid={value.childImageSharp.fluid} alt="value" />
           default:
             return null
         }
