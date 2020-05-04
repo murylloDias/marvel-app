@@ -49,6 +49,17 @@ const Menu = () => {
 
           <li className="nav-item">
             <Link
+              to="/galeria"
+              className="nav-link"
+              activeStyle={{ color: "#9963BA" }}
+              activeClassName="active"
+            >
+              <Styled.MenuWrapper><span>Galeria</span></Styled.MenuWrapper>
+            </Link>
+          </li>
+
+          <li className="nav-item">
+            <Link
               to="/sobre"
               className="nav-link"
               activeStyle={{ color: "#9963BA" }}
