@@ -5,21 +5,21 @@ import Img from "gatsby-image"
 const Image = props => {
   const { foto01, foto02, foto03 } = useStaticQuery(graphql`
     query {
-      foto01: file(relativePath: { eq: "logo.png" }) {
+      foto01: file(relativePath: { eq: "foto-01.png" }) {
         childImageSharp {
           fluid(maxWidth: 1200, maxHeight: 600) {
             ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }
-      foto02: file(relativePath: { eq: "logo.png" }) {
+      foto02: file(relativePath: { eq: "foto-02.png" }) {
         childImageSharp {
           fluid(maxWidth: 1200, maxHeight: 600) {
             ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }
-      foto03: file(relativePath: { eq: "logo.png" }) {
+      foto03: file(relativePath: { eq: "foto-03.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1200, maxHeight: 600) {
             ...GatsbyImageSharpFluid_tracedSVG
